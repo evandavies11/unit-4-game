@@ -9,7 +9,9 @@ background: url("../images/background.jpg");
     
 background-color:#68DFFE;
 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-margin-top: 30px;
+margin-top: 40px;
+margin-left: 40px;
+margin-bottom: 60px;
 width: 1000px; 
 float: center;
 
@@ -35,18 +37,30 @@ height: 600px;
 background-color: #FFF08C;
 color: #74E8CA;
 text-align: center;
+font-size: 30px;
 }
 
 .computerarea {
+    width: 200px;
+    height:200px;
+    float: left;
+    background-color: #FFFFFF;
+    color: #80A6FF;
+
 
 }
 
 #win-lose-tracker {
-
+    width: 200px;
+    height:200px;
+    float: left;
+    background-color: #FFCEFC;
+    color: #8782FF;
 }
 
 .crystals {
 
+    width: 1000px;
 display: flex;
 justify-content: space-around;
 border: 1px solid red;
@@ -60,6 +74,13 @@ border: 1px solid green;
 height: 200px;
 width: 200px; 
 
+}
+
+.scorearea {
+    width: 200px;
+    height: 100px;
+    background-color: #FFFFFF;
+    color: #80A6FF;
 }
 
 @media screen and (max-width:639px){
