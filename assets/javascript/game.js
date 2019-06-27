@@ -36,7 +36,7 @@ $(".crystal").on("click", function () {
     previous += num;
 
     if (previous > randomResult) {
-        losses--;
+        losses++;
 
         $("#losses").html(wins);
 
