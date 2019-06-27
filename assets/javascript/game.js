@@ -1,17 +1,56 @@
 console.log("hellow world")
 
 var randomResult;
-var losses;
-var wins;
+var losses = 0;
+var wins = 0;
+var previous = 0;
+
+//create random number between 19-120
+randomResult = Math.floor(Math.random() * 101) + 19;
+
+//console.log(randomResult);
+
+$("#result").html(randomResult);
+
+
 
 for (var i = 0; i < 4; i++) {
 
+    var random = Math.floor(Math.random() * 11) + 1;
+    //console.log(random);
+
     var crystal = $("<div>");
+    crystal.attr({
+        "class": "crystal",
+        "data-random": random
+    });
 
     $(".crystals").append(crystal);
 
-
 }
+
+$(".crystal").on("click", function () {
+
+    var num = parseInt($(this).attr("data-random"));
+
+    previous += num;
+
+    if (previous > randomResult) {
+        losses--;
+
+        $("#losses").html(wins);
+
+
+    }
+    else if (previous === randomResult) {
+        wins++;
+
+        $("#wins").html(wins);
+    }
+
+    console.log(previous);
+
+});
 // game that uses crystals to get random result
 // four crystals
 // each crystal generates a random number between 1 and 12
