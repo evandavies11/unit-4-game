@@ -35,6 +35,7 @@ var resetStart = function () {
         $(".crystals").append(crystal);
 
     }
+    $("#previous").html(previous);
 }
 
 //crystal button functionality
@@ -55,7 +56,6 @@ $(document).on("click", ".crystal", function () {
 
         previous = 0;
 
-        $("#previous").html(previous);
 
         resetStart();
 
@@ -68,7 +68,7 @@ $(document).on("click", ".crystal", function () {
 
         previous = 0;
 
-        $("#previous").html(previous);
+
 
         resetStart();
     }
