@@ -1,3 +1,4 @@
+//linked the stylesheet
 console.log("hellow world")
 
 var randomResult;
@@ -5,40 +6,58 @@ var losses = 0;
 var wins = 0;
 var previous = 0;
 
-//create random number between 19-120
-randomResult = Math.floor(Math.random() * 101) + 19;
+//$("crystal").attr("class");
 
-//console.log(randomResult);
+var resetStart = function () {
 
-$("#result").html(randomResult);
+    $(".crystals").empty();
+
+    //create random number between 19-120
+    randomResult = Math.floor(Math.random() * 101) + 19;
+
+    //console.log(randomResult);
+
+    $("#result").html(randomResult);
 
 
+    //create crystals
+    for (var i = 0; i < 4; i++) {
 
-for (var i = 0; i < 4; i++) {
+        var random = Math.floor(Math.random() * 11) + 1;
+        //console.log(random);
 
-    var random = Math.floor(Math.random() * 11) + 1;
-    //console.log(random);
+        var crystal = $("<div>");
+        crystal.attr({
+            "class": "crystal",
+            "data-random": random
+        });
 
-    var crystal = $("<div>");
-    crystal.attr({
-        "class": "crystal",
-        "data-random": random
-    });
+        $(".crystals").append(crystal);
 
-    $(".crystals").append(crystal);
-
+    }
 }
 
-$(".crystal").on("click", function () {
+//crystal button functionality
+resetStart();
+
+$(document).on("click", ".crystal", function () {
 
     var num = parseInt($(this).attr("data-random"));
 
     previous += num;
 
-    if (previous > randomResult) {
-        losses++;
+    $("#previous").html(previous);
 
-        $("#losses").html(wins);
+    if (previous > randomResult) {
+        losses--;
+
+        $("#losses").html(losses);
+
+        previous = 0;
+
+        $("#previous").html(previous);
+
+        resetStart();
 
 
     }
@@ -46,6 +65,12 @@ $(".crystal").on("click", function () {
         wins++;
 
         $("#wins").html(wins);
+
+        previous = 0;
+
+        $("#previous").html(previous);
+
+        resetStart();
     }
 
     console.log(previous);
