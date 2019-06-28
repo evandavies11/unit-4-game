@@ -6,6 +6,13 @@ var losses = 0;
 var wins = 0;
 var previous = 0;
 
+var images = [
+    "green",
+    "pink",
+    "red",
+    "yellow"
+]
+
 //$("crystal").attr("class");
 
 var resetStart = function () {

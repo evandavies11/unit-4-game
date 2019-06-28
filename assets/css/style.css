@@ -58,15 +58,29 @@ font-size: 30px;
     color: #8782FF;
 }
 
-.crystals {
+.crystals{
 
-    width: 1000px;
+width: 1000px;
 display: flex;
 justify-content: space-around;
 border: 1px solid red;
 align-items: center;
+background-image: url("../images/crystalpink_opt.jpg") ;
 
 }
+
+
+.crystalgreen {
+
+  width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid red;
+  align-items: center;
+  background-image: url("../images/crystalgreen_opt.jpg");
+  
+  }
+  
 
 .crystal {
     
